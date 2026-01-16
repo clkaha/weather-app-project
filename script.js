@@ -3,8 +3,15 @@ function getWeather(response) {
 	let temperatureTodayValue = document.querySelector(
 		"#temperature-today-value"
 	);
+	let cityElement = document.querySelector("#city-name");
+	let todaysWeatherHeading = document.querySelector("#todays-weather-heading");
+	let nextSixDaysHeading = document.querySelector("#next-six-days-heading");
 	let liveTempTodayValue = Math.round(response.data.daily[0].temperature.day);
 	let liveTodayIconUrl = response.data.daily[0].condition.icon_url;
+	let cityName = response.data.city;
+	cityElement.innerHTML = cityName;
+	todaysWeatherHeading.innerHTML = `Today's weather forecast for ${cityName}`;
+	nextSixDaysHeading.innerHTML = `Weather forecast for the next six days in ${cityName}`;
 	temperatureTodayValue.innerHTML = `${liveTempTodayValue}°C`;
 	temperatureTodayIcon.innerHTML = `<img src="${liveTodayIconUrl}" alt="">`;
 }
@@ -18,9 +25,9 @@ function searchCity(city) {
 function handleSearchSubmit(event) {
 	event.preventDefault();
 	let searchInput = document.querySelector("#search-input");
-	let cityElement = document.querySelector("#city-name");
-	cityElement.innerHTML = searchInput.value;
+
 	searchCity(searchInput.value);
 }
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
+searchCity("Norwich");
