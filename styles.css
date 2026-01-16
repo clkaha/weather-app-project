@@ -1,3 +1,30 @@
+/* .first-color { 
+	background: #5585b5; 
+}
+	
+.second-color { 
+	background: #53a8b6; 
+}
+
+.third-color { 
+	background: #79c2d0; 
+}
+
+.fourth-color { 
+	background: #bbe4e9; 
+} */
+
+body {
+	background-color: #5585b5;
+}
+
+main {
+	background-color: #bbe4e9;
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 20px 20px;
+}
+
 .visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
