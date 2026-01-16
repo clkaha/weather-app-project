@@ -19,6 +19,60 @@ body {
 	font-family: "Gabarito", sans-serif;
 }
 
+footer,
+footer a {
+	font-size: 1rem;
+	margin: 50px auto;
+	max-width: 600px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #050505;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #050505;
+}
+
+h3 {
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: #050505;
+}
+
+h4 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #050505;
+}
+
+h5 {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #050505;
+}
+
+h6 {
+	font-size: 1.125rem;
+	font-weight: 700;
+	color: #050505;
+}
+
+p,
+ul,
+ol,
+li,
+a,
+div,
+span {
+	font-size: 1.125rem;
+}
+
 main {
 	background-color: #fff;
 	border-radius: 10px;
@@ -29,18 +83,91 @@ main {
 	padding: 20px 20px;
 }
 
-form {
+#city-name {
+	text-align: center;
+}
+
+#conditions-today {
+	font-size: 1.5rem;
+	margin-top: 0;
+	margin-right: 20px;
+	text-align: right;
+}
+
+.day-summary {
+	border: 1px solid #79c2d0;
+	border-radius: 5px;
+	margin: 0 5px 0 5px;
+}
+
+.day-summary h4 {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+.day-summary p {
+	font-size: 1.5rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#next-six-days {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#next-six-days div {
+	text-align: center;
+}
+
+.search-form {
 	background-color: #79c2d0;
+	color: inherit;
 	margin: auto -20px;
-	opacity: 50%;
 	padding: 20px 20px;
 	text-align: center;
+}
+#search-input {
+	width: 60%;
+	border-color: #050505;
+	border-width: 2px;
+}
+
+#search-submit {
+	background-color: #5585b5;
+	border-color: #5585b5;
+	border-width: 2px;
+}
+
+#search-input,
+#search-submit {
+	border-radius: 5px;
+	font-family: inherit;
+	font-size: 1.25rem;
+	padding: 10px 10px;
+}
+
+#temperature-today {
+	margin-left: 20px;
+	margin-top: 0;
+	text-align: left;
+}
+
+#temperature-today-icon {
+	font-size: 3.5rem;
+}
+
+#temperature-today-value {
+	font-size: 3.5rem;
+	font-weight: 700;
 }
 
 #weather-today {
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	margin: 0 50px 0 50px;
 }
+
 .visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);

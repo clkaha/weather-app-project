@@ -15,7 +15,7 @@
 	<body>
 		<main>
 			<h1 align="center">Find a weather forecast</h1>
-			<form>
+			<form class="search-form">
 				<input
 					type="search"
 					name=""
@@ -23,44 +23,58 @@
 					placeholder="Enter a city..."
 					required
 				/>
-				<input type="submit" value="Search" />
+				<input type="submit" id="search-submit" value="Search" />
 			</form>
-			<h2>City name</h2>
+			<h2 id="city-name">City name</h2>
 			<h3 class="visually-hidden">Today's weather for city name</h3>
 			<div id="weather-today">
-				<p>
-					Friday 11:28, overcast clouds <br />
-					Humidity: 82%, Wind: 5.14km/h
-				</p>
+				<div>
+					<p id="conditions-today">
+						Overcast clouds <br />
+						Humidity: 82% <br />
+						Wind: 5.14km/h
+					</p>
+				</div>
+				<div>
+					<p id="temperature-today">
+						<span id="temperature-today-icon">🫣</span
+						><span id="temperature-today-value"> 12°C</span>
+					</p>
+				</div>
 			</div>
 			<div>
-				<p>🫣 12°C</p>
-			</div>
-			<div>
-				<h3>Day-by-day forecast for city name</h3>
-				<div>
-					<h4>Saturday</h4>
-					<p>🥳<br />17°C</p>
-				</div>
-				<div>
-					<h4>Sunday</h4>
-					<p>🥳<br />17°C</p>
-				</div>
-				<div>
-					<h4>Monday</h4>
-					<p>🥳<br />17°C</p>
-				</div>
-				<div>
-					<h4>Tuesday</h4>
-					<p>🥳<br />17°C</p>
-				</div>
-				<div>
-					<h4>Wednesday</h4>
-					<p>🥳<br />17°C</p>
-				</div>
-				<div>
-					<h4>Thursday</h4>
-					<p>🥳<br />17°C</p>
+				<h3 class="visually-hidden">Day-by-day forecast for city name</h3>
+				<div id="next-six-days">
+					<div class="day-summary">
+						<h4>Sat</h4>
+						<p>🥳</p>
+						<p>17°C</p>
+					</div>
+					<div class="day-summary">
+						<h4>Sun</h4>
+						<p>🥳</p>
+						<p>17°C</p>
+					</div>
+					<div class="day-summary">
+						<h4>Mon</h4>
+						<p>🥳</p>
+						<p>17°C</p>
+					</div>
+					<div class="day-summary">
+						<h4>Tue</h4>
+						<p>🥳</p>
+						<p>17°C</p>
+					</div>
+					<div class="day-summary">
+						<h4>Wed</h4>
+						<p>🥳</p>
+						<p>17°C</p>
+					</div>
+					<div class="day-summary">
+						<h4>Thu</h4>
+						<p>🥳</p>
+						<p>17°C</p>
+					</div>
 				</div>
 			</div>
 		</main>
