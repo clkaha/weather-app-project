@@ -111,6 +111,12 @@ main {
 	margin-bottom: 10px;
 }
 
+#humidity-value,
+#windspeed {
+	color: #5585b5;
+	font-size: inherit;
+}
+
 #next-six-days {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -158,6 +164,7 @@ main {
 }
 
 #temperature-today-value {
+	color: #5585b5;
 	font-size: 3.5rem;
 	font-weight: 700;
 }
