@@ -126,7 +126,7 @@ main {
 	text-align: center;
 }
 
-.search-form {
+#search-form {
 	background-color: #79c2d0;
 	color: inherit;
 	margin: auto -20px;
