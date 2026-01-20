@@ -89,7 +89,8 @@ main {
 	margin: 10px auto;
 }
 
-#conditions-today {
+#conditions-today,
+#conditions-today span {
 	font-size: 1.5rem;
 	margin-top: 0;
 	margin-right: 20px;
