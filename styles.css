@@ -15,7 +15,6 @@
 } */
 
 a {
-	color: #050505;
 	font-weight: 600;
 }
 
@@ -36,36 +35,42 @@ h1 {
 	font-size: 2.5rem;
 	font-weight: 700;
 	color: #050505;
+	text-align: center;
 }
 
 h2 {
 	font-size: 2rem;
 	font-weight: 700;
 	color: #050505;
+	text-align: center;
 }
 
 h3 {
 	font-size: 1.75rem;
 	font-weight: 700;
 	color: #050505;
+	text-align: center;
 }
 
 h4 {
 	font-size: 1.5rem;
 	font-weight: 700;
 	color: #050505;
+	text-align: center;
 }
 
 h5 {
 	font-size: 1.25rem;
 	font-weight: 700;
 	color: #050505;
+	text-align: center;
 }
 
 h6 {
 	font-size: 1.125rem;
 	font-weight: 700;
 	color: #050505;
+	text-align: center;
 }
 
 p,
@@ -76,6 +81,7 @@ a,
 div,
 span {
 	font-size: 1.125rem;
+	color: #050505;
 }
 
 main {
@@ -92,7 +98,6 @@ p::first-letter {
 }
 #city-name,
 #todays-weather-heading {
-	text-align: center;
 	margin: 10px auto;
 }
 
@@ -130,10 +135,6 @@ p::first-letter {
 #next-six-days {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-#next-six-days div {
-	text-align: center;
 }
 
 #search-form {
