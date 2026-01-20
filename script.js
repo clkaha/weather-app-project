@@ -16,7 +16,7 @@ function getWeather(response) {
 	let liveTodayIconUrl = response.data.daily[0].condition.icon_url;
 	let cityName = response.data.city;
 	cityElement.innerHTML = cityName;
-	todaysWeatherHeading.innerHTML = formatDate(new Date());
+	todaysWeatherHeading.innerHTML = formatTodayDate(new Date());
 	descriptionToday.innerHTML = `${liveDescription}`;
 	humidityToday.innerHTML = `${liveHumidityValue}%`;
 	windspeedToday.innerHTML = `${liveWindspeed}km/h`;
@@ -26,25 +26,33 @@ function getWeather(response) {
 }
 
 let now = new Date();
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
-let months = [
-	"January",
-	"February",
-	"March",
-	"April",
-	"May",
-	"June",
-	"July",
-	"August",
-	"September",
-	"October",
-	"November",
-	"December",
-];
-let date = now.getDate();
-let month = months[now.getMonth()];
-function formatDate() {
+function formatTodayDate() {
+	let days = [
+		"Sunday",
+		"Monday",
+		"Tuesday",
+		"Wednesday",
+		"Thursday",
+		"Friday",
+		"Saturday",
+	];
+	let day = days[now.getDay()];
+	let months = [
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December",
+	];
+	let date = now.getDate();
+	let month = months[now.getMonth()];
 	return `${day} ${date} ${month}`;
 }
 
