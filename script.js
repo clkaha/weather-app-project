@@ -69,6 +69,28 @@ function handleSearchSubmit(event) {
 
 	searchCity(searchInput.value);
 }
+
+function displayNextSixDays() {
+	let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+	let forecastHtml = "";
+	days.forEach(function (day) {
+		forecastHtml =
+			forecastHtml +
+			`<div class="day-summary">
+						<h4 id="day-name">${day}</h4>
+						<p id="day-icon">🥳</p>
+						<p>
+							<span class="max-temp" id="day-max-temp">17°C</span>
+							<br />
+							<span id="day-min-temp">10°C</span>
+						</p>
+					</div>`;
+	});
+	let nextSixDays = document.querySelector("#next-six-days");
+	nextSixDays.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 searchCity("Norwich");
+displayNextSixDays();

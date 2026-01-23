@@ -113,6 +113,7 @@ p::first-letter {
 	border: 1px solid #79c2d0;
 	border-radius: 5px;
 	margin: 0 5px 0 5px;
+	padding: 0 20px;
 	text-align: center;
 }
 
@@ -138,8 +139,8 @@ span {
 	font-weight: 700;
 }
 #next-six-days {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	display: flex;
+	justify-content: space-around;
 }
 
 #search-form {
