@@ -25,7 +25,28 @@ function getWeather(response) {
 	temperatureTodayMin.innerHTML = `${liveTempTodayMin}°C`;
 	nextSixDaysHeading.innerHTML = `Weather forecast for the next six days in ${cityName}`;
 }
+function displayNextSixDays(response) {
+	console.log(response.data);
 
+	let forecastHtml = "";
+	response.data.daily.forEach(function (day, index) {
+		if (index > 0) {
+			forecastHtml =
+				forecastHtml +
+				`<div class="day-summary">
+						<h4 class="day-name">${formatDay(day.time)}</h4>
+						<p><img class="day-icon" src="${day.condition.icon_url}" alt=""></p>
+						<p>
+							<span class="max-temp">${Math.round(day.temperature.maximum)}°C</span>
+							<br />
+							<span>${Math.round(day.temperature.minimum)}°C</span>
+						</p>
+					</div>`;
+		}
+	});
+	let nextSixDays = document.querySelector("#next-six-days");
+	nextSixDays.innerHTML = forecastHtml;
+}
 let now = new Date();
 function formatTodayDate() {
 	let days = [
@@ -61,6 +82,7 @@ function searchCity(city) {
 	let apiKey = "t892ofdde3d43fb03b089a7dffb097a9";
 	let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
 	axios.get(apiUrl).then(getWeather);
+	axios.get(apiUrl).then(displayNextSixDays);
 }
 
 function handleSearchSubmit(event) {
@@ -69,28 +91,12 @@ function handleSearchSubmit(event) {
 
 	searchCity(searchInput.value);
 }
-
-function displayNextSixDays() {
-	let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-	let forecastHtml = "";
-	days.forEach(function (day) {
-		forecastHtml =
-			forecastHtml +
-			`<div class="day-summary">
-						<h4 id="day-name">${day}</h4>
-						<p id="day-icon">🥳</p>
-						<p>
-							<span class="max-temp" id="day-max-temp">17°C</span>
-							<br />
-							<span id="day-min-temp">10°C</span>
-						</p>
-					</div>`;
-	});
-	let nextSixDays = document.querySelector("#next-six-days");
-	nextSixDays.innerHTML = forecastHtml;
+function formatDay(timestamp) {
+	let date = new Date(timestamp * 1000);
+	let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+	return days[date.getDay()];
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 searchCity("Norwich");
-displayNextSixDays();
