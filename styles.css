@@ -16,6 +16,14 @@
 
 a {
 	font-weight: 600;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline 2px;
+}
+a:focus {
+	background-color: #fd0;
+	border: none;
 }
 
 body {
@@ -163,6 +171,20 @@ span {
 	background-color: #5585b5;
 	border-color: #5585b5;
 	border-width: 2px;
+}
+
+#search-submit:hover {
+	cursor: pointer;
+	text-decoration: underline 2px;
+}
+
+#search-input:focus,
+#search-submit:focus {
+	box-shadow:
+		0 0 0 3px #050505,
+		0px 0 0 6px #fd0;
+	outline: #050505 solid 2px;
+	transition: none;
 }
 
 #search-input,
