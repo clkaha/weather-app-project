@@ -113,6 +113,7 @@ p::first-letter {
 	border: 1px solid #79c2d0;
 	border-radius: 5px;
 	margin: 0 5px 0 5px;
+	text-align: center;
 }
 
 .day-summary h4 {
@@ -120,7 +121,8 @@ p::first-letter {
 	margin-bottom: 0;
 }
 
-.day-summary p {
+.day-summary p,
+span {
 	font-size: 1.5rem;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -131,7 +133,10 @@ p::first-letter {
 	color: #5585b5;
 	font-size: inherit;
 }
-
+.max-temp {
+	color: #5585b5;
+	font-weight: 700;
+}
 #next-six-days {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -165,7 +170,8 @@ p::first-letter {
 }
 
 #temperature-today {
-	align-items: center;
+	/* align-items: center; */
+	/* justify-content: flex-start; */
 	display: flex;
 	margin-left: 20px;
 	margin-top: 0;
@@ -173,14 +179,23 @@ p::first-letter {
 }
 
 #temperature-today-icon img {
-	width: 90px;
+	align-self: center;
+	max-width: 100%;
+}
+#temperature-today-values {
+	align-self: center;
+}
+#temperature-today-max {
+	color: #5585b5;
+	font-size: 2.5rem;
+	line-height: 2.5rem;
+	font-weight: 700;
 }
 
-#temperature-today-value {
-	color: #5585b5;
-	font-size: 3.5rem;
-	line-height: 3.5rem;
-	font-weight: 700;
+#temperature-today-min {
+	color: #050505;
+	font-size: 2.5rem;
+	line-height: 2.5rem;
 }
 
 #weather-today {

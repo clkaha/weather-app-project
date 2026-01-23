@@ -1,8 +1,7 @@
 function getWeather(response) {
 	let temperatureTodayIcon = document.querySelector("#temperature-today-icon");
-	let temperatureTodayValue = document.querySelector(
-		"#temperature-today-value",
-	);
+	let temperatureTodayMax = document.querySelector("#temperature-today-max");
+	let temperatureTodayMin = document.querySelector("#temperature-today-min");
 	let cityElement = document.querySelector("#city-name");
 	let todaysWeatherHeading = document.querySelector("#todays-weather-heading");
 	let descriptionToday = document.querySelector("#description-today");
@@ -12,16 +11,18 @@ function getWeather(response) {
 	let liveDescription = response.data.daily[0].condition.description;
 	let liveHumidityValue = response.data.daily[0].temperature.humidity;
 	let liveWindspeed = response.data.daily[0].wind.speed;
-	let liveTempTodayValue = Math.round(response.data.daily[0].temperature.day);
 	let liveTodayIconUrl = response.data.daily[0].condition.icon_url;
+	let liveTempTodayMax = Math.round(response.data.daily[0].temperature.maximum);
+	let liveTempTodayMin = Math.round(response.data.daily[0].temperature.minimum);
 	let cityName = response.data.city;
 	cityElement.innerHTML = cityName;
 	todaysWeatherHeading.innerHTML = formatTodayDate(new Date());
 	descriptionToday.innerHTML = `${liveDescription}`;
 	humidityToday.innerHTML = `${liveHumidityValue}%`;
 	windspeedToday.innerHTML = `${liveWindspeed}km/h`;
-	temperatureTodayValue.innerHTML = `${liveTempTodayValue}°C`;
 	temperatureTodayIcon.innerHTML = `<img src="${liveTodayIconUrl}" alt="">`;
+	temperatureTodayMax.innerHTML = `${liveTempTodayMax}°C`;
+	temperatureTodayMin.innerHTML = `${liveTempTodayMin}°C`;
 	nextSixDaysHeading.innerHTML = `Weather forecast for the next six days in ${cityName}`;
 }
 
